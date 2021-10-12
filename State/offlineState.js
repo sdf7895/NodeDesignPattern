@@ -1,6 +1,6 @@
 const jot = require('json-over-tcp')
 
-module.exports = class OmineState {
+module.exports = class OfflineState {
     constructor(failsafeSocket){
         this.failsafeSocket = failsafeSocket;
     }
@@ -19,7 +19,7 @@ module.exports = class OmineState {
             () => {
                 this.failsafeSocket.socket.removeListener('error', retry),
                 this.failsafeSocket.changeState('online'),
-                this.failsafeSocket.socket.once('error'),retry
+                this.failsafeSocket.socket.once('error',retry)
             }
         )
     }
