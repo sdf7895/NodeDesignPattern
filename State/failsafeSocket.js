@@ -5,7 +5,7 @@
 
 //기본적인 fail-sfafe-socket 구현
 
-const OffineState = require('./oMineState')
+const OffineState = require('./offlineState')
 const OnlineState = require('/onlineState')
 
 class FailsafeSocket{
